@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "A",
+    "image": "./images/FAMSAV15.png",
+    "clicked": false
+  },
+  {
+    "id": 2,
+    "name": "B",
+    "image": "./images/FBO-ESG14.png",
+    "clicked": false
+  },
+  {
+    "id": 3,
+    "name": "C",
+    "image": "./images/FBO-VVI13.png",
+    "clicked": false
+  },
+  {
+    "id": 4,
+    "name": "D",
+    "image": "./images/FCP-SJR16.png",
+    "clicked": false
+  },
+  {
+    "id": 5,
+    "name": "E",
+    "image": "./images/FJD-GBR17.png",
+    "clicked": false
+  },
+  {
+    "id": 6,
+    "name": "F",
+    "image": "./images/FLR-HEL05.png",
+    "clicked": false
+  },
+  {
+    "id": 7,
+    "name": "G",
+    "image": "./images/FMU-CHB08.png",
+    "clicked": false
+  },
+  {
+    "id": 8,
+    "name": "H",
+    "image": "./images/FMU-SJR16.png",
+    "clicked": false
+  },
+  {
+    "id": 9,
+    "name": "I",
+    "image": "./images/FPC-PAF17.png",
+    "clicked": false
+  },
+  {
+    "id": 10,
+    "name": "J",
+    "image": "./images/FMP-CMR17.png",
+    "clicked": false
+  },
+  {
+    "id": 11,
+    "name": "K",
+    "image": "./images/FFO-SCA17.png",
+    "clicked": false
+  },
+  {
+    "id": 12,
+    "name": "L",
+    "image": "./images/FRX-QUI17.png",
+    "clicked": false
+  }
+]
