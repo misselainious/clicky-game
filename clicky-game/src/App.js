@@ -13,8 +13,8 @@ class App extends Component {
   state = {
     friends,
     currentScore: 0,
-    topScore: 0,
-    rightWrong: "",
+    highscore: 0,
+    message: "",
     clicked: [],
   };
 
@@ -50,6 +50,10 @@ class App extends Component {
     } else {
       // Has been clicked already -> Loss
       console.log("abc")
+      this.setState({
+        message: "Oh no! You have already clicked on that one!"
+      })
+      this.handleReset();
     }
   };
 
@@ -58,33 +62,36 @@ class App extends Component {
     this.setState({
       currentScore: newScore
     });
-    if (newScore >= this.state.topScore) {
+    if (newScore >= this.state.highscore) {
       console.log("current score",this.state.currentScore)
-      this.setState({ topScore: newScore });
+      this.setState({ highscore: newScore });
     }
     else if (newScore === 12) {
-      // this.setState({ correctIncorrect: "You win!" });
-      console.log("you win")
+      this.setState({message: "Wow! A perfect Score! Your memory must be really sharp..."})
     }
     this.shuffleFriends(friends);
   }
-  // handleReset = () => {
-  //   this.setState({
-  //     currentScore: 0,
-  //     topScore: this.state.topScore,
-  //     rightWrong: "Glaven!",
-  //     clicked: []
-  //   });
-  //   this.shuffleFriends(friends);
-  // };
-  // Map over this.state.friends and render a FriendCard component for each friend object
-
+  //Resets after loss or perfect score
+  handleReset = () => {
+    this.setState({
+      currentScore: 0,
+      highscore: this.state.highscore,
+      message: "",
+      clicked: []
+    });
+    this.shuffleFriends(friends);
+  };
   
+  //Renders to the page
   render() {
     return (
       <Wrapper>
         <Title>Wine List</Title>
-        <Scores scores={this.state.currentScore} />
+        <Scores 
+        scores={this.state.currentScore} 
+        highscore={this.state.highscore}
+        message={this.state.message}
+        />
         <div className = "row"></div>
         {this.state.friends.map(friend => (
           <FriendCard
@@ -94,6 +101,7 @@ class App extends Component {
             name={friend.name}
             image={friend.image}
             handleClick={this.handleClick}
+            handleReset={this.handleReset}
             // handleReset={this.handleReset}
           />
         ))}
